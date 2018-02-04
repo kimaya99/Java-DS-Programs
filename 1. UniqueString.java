@@ -8,15 +8,18 @@ static boolean anyDupChar(String str) {
 	
 	boolean[] str_array = new boolean[128];
 
-    for (int i = 0 ; i< str.length();i++){
-    	int val = str.charAt(i);
-       	if (str_array[val])	  {
+    	for (int i = 0 ; i< str.length();i++){
+    		int val = str.charAt(i);
+		
+       		if (str_array[val])	  {
 	      	return false;
-       	}
-       	str_array [val] = true;
-       	System.out.println(str_array[val]);
+       		}
+		
+       		str_array [val] = true;
+       		System.out.println(str_array[val]);
 	 }
-  	return true;
+  	
+	return true;
 }
 
 public static void main(String args[]){
