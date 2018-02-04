@@ -1,11 +1,13 @@
 import java.util.*;
 
 class CheckPermutation{
+	
 static String sort (String toBeSorted){
 	char newChar[] = toBeSorted.toCharArray();
 	java.util.Arrays.sort(newChar);
-    return new String(newChar);
+    	return new String(newChar);
 }
+	
 static boolean checkPerm (String str, String permStr) {
 	if (str.length() != permStr.length()) {
 		return false;
