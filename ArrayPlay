@@ -1,0 +1,68 @@
+// JAVA -> JJAJAVJAVA
+public String stringSplosion(String str) {
+  String array= "";
+  for (int i = 0;i <str.length();i++){
+   array += str.substring(0,i+1);
+  }
+  return array;
+}
+
+// [1,2,3,1,4,2] -> 4
+public int maxSpan(int[] nums) {
+  int max = 0;
+  for (int left= 0 ;left < nums.length;left++){
+    for(int right=left;right<nums.length;right++){
+      if(nums[left]==nums[right] && right-left+1> max){
+        max = right-left+1;
+      }
+    }
+  }
+  return max;
+}
+
+// Given nums = [2, 7, 11, 15], target = 9 -> [0,1]
+public int[] twoSum(int[] nums, int target) {
+        int[] array = new int[2];
+        for(int i =0 ;i< nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[i] + nums[j]==target){
+                    array[0]=i;
+                    array[1]=j;
+                    return array;            
+                }             
+            }              
+        }
+    return array;
+}
+
+// () -> True
+ public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for(int i = 0; i < s.length(); i++) {
+            char x = s.charAt(i);
+            if(x == '(' || x == '[' || x == '{') 
+                stack.push(x);
+            else if(stack.empty()) 
+                return false;
+            else if(x == ')' && stack.pop() != '(') 
+                return false;
+            else if(x == ']' && stack.pop() != '[') 
+                return false;
+            else if(x == '}' && stack.pop() != '{') 
+                return false;
+        }
+        return stack.empty();
+}
+
+// Rotated Array
+ public void rotate(int[] nums, int k) {
+        int[] rotatednums = new int[nums.length];
+        int length = nums.length;
+        for(int i =0;i<length;i++){
+            int m = (i+k)%length;
+            rotatednums[m] = nums[i];
+        }
+         for (int j = 0; j <length; j++) {
+            nums[j] = rotatednums[j];
+        }
+}
