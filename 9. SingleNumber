@@ -3,11 +3,11 @@ class Solution {
         Set<Integer> hashSet = new HashSet<Integer>();
        
         for(int i=0;i<nums.length;i++){
-            if(!hashSet.contains(nums[i]))         
+            if(!hashSet.contains(nums[i]))  // if hashset does not contain nums[i] ->  Add it!       
                 hashSet.add(nums[i]);
             else
-			    hashSet.remove(nums[i]);			
+		hashSet.remove(nums[i]);    // if it contains remove it 		
 	        }
-	return hashSet.iterator().next();
+	return hashSet.iterator().next(); // at the end what remains is unique
     }
 }
